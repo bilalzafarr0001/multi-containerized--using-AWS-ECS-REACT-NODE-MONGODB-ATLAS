@@ -1,4 +1,4 @@
-FROM node
+FROM --platform=linux/amd64 node:11.15
 
 WORKDIR /app
 
@@ -10,9 +10,6 @@ COPY . .
 
 EXPOSE 80
 
-ENV MONGODB_USERNAME=root
-ENV MONGODB_PASSWORD=secret
-ENV MONGODB_URL=mongodb
-ENV MONGODB_NAME=goals-dev
+ ENV ATLAS_URI =mongodb+srv://bilal:bilal@cluster0.lcfkrxc.mongodb.net/goals?retryWrites=true&w=majority
 
 CMD ["npm", "start"]
